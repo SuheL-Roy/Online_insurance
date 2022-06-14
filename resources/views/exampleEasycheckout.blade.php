@@ -32,11 +32,11 @@
 <body class="bg-light">
     <div class="container">
         <div class="py-5 text-center">
-            <!-- <h2>EasyCheckout (Popup) - SSLCommerz</h2> -->
+            <h2>EasyCheckout (Popup) - SSLCommerz</h2>
 
-            <!-- <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. We have provided this
+            <p class="lead">Below is an example form built entirely with Bootstraps form controls. We have provided this
             sample form for understanding EasyCheckout (Popup) Payment integration with SSLCommerz.</p>
-    </div> -->
+     </div>
 
             <div class="row">
                 <!-- <div class="col-md-4 order-md-2 mb-4">
