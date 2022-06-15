@@ -17,12 +17,12 @@
     <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    
+
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
 <body>
-  
+
     <header>
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
@@ -45,22 +45,22 @@
                                             <li><a href="{{route('aboutroute')}}">about</a></li>
                                             <li><a href="{{route('contactroute')}}">Contact</a></li>
 
-                                            
+
 
                                             @if(auth()->check())
 
                                             <li><a href="{{route('dashboardroute')}}">Dashboard</a></li>
-                                              <li><a href="{{route('logout')}}">Log out</a></li>
+                                            <li><a href="{{route('logout')}}">Log out</a></li>
                                             @else
                                             <li><a href="{{route('login')}}">Log In</a></li>
                                             @endif
-                                           
-                                            
+
+
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
-                          
+
                             <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                                 <div class="Appointment">
                                     <div class="phone_num d-none d-xl-block">
@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="d-none d-lg-block">
                                         <a class="boxed-btn4" href="{{route('serviceroute')}}">Apply for a Insurance
-                                    </a>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -83,4 +83,5 @@
         </div>
     </header>
 </body>
+
 </html>

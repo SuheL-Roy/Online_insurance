@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Installment;
+use App\Models\Policy;
 use Illuminate\Http\Request;
 
 class InstallmentController extends Controller
@@ -37,11 +38,13 @@ class InstallmentController extends Controller
 
     public function installmentpay($id)
     {
+
         $installments = Installment::find($id);
         //return $installments;
 
       return view('admin.installment.installmentpay', compact('installments'));
-     // return view('exampleEasycheckout',compact('installments'));
+        
+     
     }
 
     public function confirm(Request $request, $id)

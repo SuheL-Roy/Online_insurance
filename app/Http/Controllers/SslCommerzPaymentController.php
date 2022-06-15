@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB as FacadesDB;
+use Illuminate\Support\Facades\Redirect;
 
 class SslCommerzPaymentController extends Controller
 {
@@ -42,7 +43,7 @@ class SslCommerzPaymentController extends Controller
         $post_data['cus_state'] = "";
         $post_data['cus_postcode'] = "";
         $post_data['cus_country'] = "Bangladesh";
-        $post_data['cus_phone'] = '8801XXXXXXXXX';
+        $post_data['cus_phone'] = '8801732969177';
         $post_data['cus_fax'] = "";
 
         # SHIPMENT INFORMATION
@@ -112,7 +113,7 @@ class SslCommerzPaymentController extends Controller
         $post_data['cus_state'] = "";
         $post_data['cus_postcode'] = "";
         $post_data['cus_country'] = "Bangladesh";
-        $post_data['cus_phone'] = '8801XXXXXXXXX';
+        $post_data['cus_phone'] = '8801732969177';
         $post_data['cus_fax'] = "";
 
         # SHIPMENT INFORMATION
@@ -143,7 +144,7 @@ class SslCommerzPaymentController extends Controller
             ->updateOrInsert([
                 // 'name' => $post_data['cus_name'],
                 // 'email' => $post_data['cus_email'],
-                // 'phone' => $post_data['cus_phone'],
+                'phone' => $post_data['cus_phone'],
                 'amount' => $post_data['total_amount'],
                 'status' => 'Pending',
                 // 'address' => $post_data['cus_add1'],
@@ -207,7 +208,7 @@ class SslCommerzPaymentController extends Controller
              */
             echo "Transaction is successfully Completed";
 
-             //return view('welcome');
+             return Redirect()->back()->with('/');
             
         } else {
             #That means something wrong happened. You can redirect customer to your product page.
