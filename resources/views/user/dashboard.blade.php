@@ -15,7 +15,7 @@ namespace App\Models\Installment;
 <h1>{{App\Models\User::where('role','account_holder')->count()}}</h1> -->
 <!-- <h1>{{App\Models\Installment::where('status','paid')->count()}}</h1>
 <h1>{{App\Models\Installment::where('status','due')->count()}}</h1> -->
-
+@if(auth()->user()->role==='manager' || auth()->user()->role==='accountant')
 <div class="card-columns p-3 ">
 
     <div class="card" style="width: 18rem;">
@@ -62,4 +62,23 @@ namespace App\Models\Installment;
         </div>
     </div>
 </div>
+@else
+
+<div class="card-columns p-3 ">
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title text-center">Current Month Paid Installment</h5>
+            <h6 class="card-subtitle mb-2 text-center">{{App\Models\Installment::where('status','paid')->count()}}</h6>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title text-center">Current Month Due Installment</h5>
+            <h6 class="card-subtitle mb-2 text-center">{{App\Models\Installment::where('status','due')->count()}}</h6>
+        </div>
+    </div>
+</div>
+
+@endif
 @endsection
