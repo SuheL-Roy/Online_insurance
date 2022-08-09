@@ -74,6 +74,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/installment/{id}/pay', 'InstallmentController@confirm')->name('confirmroute');
 
+    Route::post('/installments/{id}/payed', 'InstallmentController@confirmed')->name('confirmed_route');
+
     Route::get('/paidinstallment', 'InstallmentController@paidthisMonth')->name('paidinstallment.thisMonth');
 
 

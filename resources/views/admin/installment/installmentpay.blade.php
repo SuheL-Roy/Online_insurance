@@ -19,13 +19,20 @@
     Account Number: {{$installments->policy_id}}<br>
     Installment Amount: {{$installments->amount}}<br>
     month: {{$installments->month}}<br>
-
+    @if(auth()->user()->role==='account_holder')
     <form action="{{route('confirmroute',['id'=>$installments->id])}}" method="POST" role="form" enctype="multipart/form-data">
       @method('post')
       @csrf
       <input type="submit" name="update" value="Confirm" class="btn btn-primary">
     </form>
+    @else
+    <form action="{{route('confirmed_route',['id'=>$installments->id])}}" method="POST" role="form" enctype="multipart/form-data">
+      @method('post')
+      @csrf
+      <input type="submit" name="update" value="Confirm" class="btn btn-primary">
+    </form>
 
+    @endif
   </center>
 
   </div>

@@ -15,17 +15,17 @@ class CreateClaimsTable extends Migration
     {
         Schema::create('claims', function (Blueprint $table) {
             $table->bigIncrements('id');
-            
+
             $table->integer('user_id');
-             $table->string('policy_id');
-             $table->text('reason');
-              $table->string('date');
-             $table->string('time');
-             $table->text('place');
-             $table->decimal('loss_amount');
-             $table->decimal('claim_amount');
-             $table->text('description');
-             $table->text('status');
+            $table->string('policy_id');
+            $table->text('reason');
+            $table->string('date');
+            $table->string('time');
+            $table->text('place');
+            $table->decimal('loss_amount');
+            $table->decimal('claim_amount');
+            $table->text('description');
+            $table->text('status');
             $table->timestamps();
         });
     }

@@ -11,9 +11,9 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Account Number</th>
-            <th scope="col">Installment Amount</th>
             <th scope="col">Month</th>
             <th scope="col">Year</th>
+            <th scope="col">Installment Amount</th>
             <th scope="col">Status</th>
             @if(auth()->user()->role==='account_holder')
             <th scope="col">Action</th>

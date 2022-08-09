@@ -59,10 +59,28 @@ class InstallmentController extends Controller
         $installments = Installment::find($id);
 
         $all_data = Installment::where('month', date('m'))->where('year', date('Y'))->where('status', 'due')->paginate(10);
-        //return $all_data; 
+         
         //return view('admin.installment.thisMonth', compact('all_data'));
-        return view('exampleEasycheckout',compact('all_data','installments'));
+       return view('exampleEasycheckout',compact('all_data','installments'));
     }
+
+    public function confirmed(Request $request, $id)
+    {
+
+
+        $installments = Installment::findOrFail($id);
+        $installments->status = "paid";
+
+        $installments->save();
+        
+        $installments = Installment::find($id);
+
+        $all_data = Installment::where('month', date('m'))->where('year', date('Y'))->where('status', 'due')->paginate(10);
+         
+        return view('admin.installment.thisMonth', compact('all_data'));
+       //return view('exampleEasycheckout',compact('all_data','installments'));
+    }
+    
 
 
     public function paidthisMonth()
