@@ -67,6 +67,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/installment', 'InstallmentController@thisMonth')->name('installment.thisMonth');
 
     Route::get('/dues', 'InstallmentController@totaldue')->name('alldues');
+    Route::get('/paids', 'InstallmentController@totalpaid')->name('allpaid'); 
 
 
 

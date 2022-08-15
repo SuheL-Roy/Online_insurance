@@ -109,6 +109,12 @@
               All due installments
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('allpaid')}}"> 
+              <span data-feather="layers"></span> 
+              All paid installments
+            </a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link" href="{{route('paidinstallment.thisMonth')}}">

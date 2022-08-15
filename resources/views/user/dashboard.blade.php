@@ -52,13 +52,13 @@ namespace App\Models\Installment;
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title text-center">Current Month Paid Installment</h5>
-            <h6 class="card-subtitle mb-2 text-center">{{App\Models\Installment::where('status','paid')->count()}}</h6>
+            <h6 class="card-subtitle mb-2 text-center">{{App\Models\Installment::where('month', date('m'))->where('year', date('Y'))->where('status', 'paid')->count()}}</h6>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title text-center">Current Month Due Installment</h5>
-            <h6 class="card-subtitle mb-2 text-center">{{App\Models\Installment::where('status','due')->count()}}</h6>
+            <h6 class="card-subtitle mb-2 text-center">{{App\Models\Installment::where('month', date('m'))->where('year', date('Y'))->where('status', 'due')->count()}}</h6>
         </div>
     </div>
 </div>

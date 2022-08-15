@@ -34,6 +34,19 @@ class InstallmentController extends Controller
         return view('admin.installment.totaldue', compact('all_data'));
     }
 
+    public function totalpaid()
+    {
+
+        // $installment = Installment::with('user')->where('month', date('m'))->where('year', date('Y'))->where('status', 'wait')->update([
+        //     'status' => 'due'
+        // ]);
+
+
+        $all_data = Installment::where('status', 'paid')->paginate(10);
+
+        return view('admin.installment.totalpaid', compact('all_data'));
+    }
+
 
 
     public function installmentpay($id)
