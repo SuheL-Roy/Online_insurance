@@ -12,9 +12,9 @@
                             </div>
                             <p>
 
-                                itsourcecode@gmail.com <br>
+                                hunterCafe69@gmail.com <br>
                                 09120118871<br>
-                                Brgy.Enclaro, Binalbagan, Negros Occidental
+                                sylhet,bangladesh
                             </p>
                             <div class="socail_links">
                                 <ul>

@@ -237,6 +237,7 @@ class PolicyController extends Controller
         return view('admin.claim.claimform',compact('policy'));
     }
 
+
     public function claimcreate(Request $request)
     {
 
@@ -416,6 +417,7 @@ public function claimApproved($id)
     $claim = Claim::with('policy.category')->where('status','Pending')->where('id',$id)->first();
     //select * from calims  join on polcies claims.policy_id = poliecs.id 
         //join on categories poliecs.category_id = categories.id
+    // return $claim;   
     
     $interest_rate = ((int)$claim->policy->category->interest_rate / 100);
 
